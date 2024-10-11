@@ -34,7 +34,7 @@ export const bufferToArrayBuffer = function(buffer) {
  * @param blob
  * @returns
  */
-function blobToArrayBuffer (blob) {
+export const blobToArrayBuffer = function(blob) {
   return new Promise((resolve, reject) => {
     const file = new FileReader()
     file.onload = function (result) {

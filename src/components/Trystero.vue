@@ -2,6 +2,8 @@
   <div>
     <video class="video" ref="videos" autoplay playsinline></video>
     <button @click="openRoom">开始</button>
+    <button @click="handleStart">测试定时{{ timer }}</button>
+    <button @click="handleStop">关闭定时</button>
   </div>
 </template>
 
@@ -9,9 +11,26 @@
 import { joinRoom } from 'trystero';
 import { selfId } from 'trystero'
 import { ref } from 'vue'
+import { mySetInterval, myClearInterval } from '@/utils/my_interval'
 
 
 const videos = ref(null);
+const timer = ref(null);
+
+function handleStart () {
+  let old_timer = timer.value;
+  if (old_timer) {
+    clearInterval(old_timer);
+  }
+  timer.value = mySetInterval(() => {
+    console.log('ssss')
+  },1000)
+}
+
+function handleStop () {
+  myClearInterval(timer.value)
+  timer.value = null;
+}
 
 
 async function openRoom () {

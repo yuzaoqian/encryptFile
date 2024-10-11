@@ -4,8 +4,8 @@ import Trystero from './components/Trystero.vue';
 </script>
 
 <template>
-  <Trystero></Trystero>
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
+  <!-- <Trystero></Trystero> -->
+  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
